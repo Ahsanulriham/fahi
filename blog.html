@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fahima Akter | Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <a href="home.html">
+        <img src="image/logo.jpg" alt="Fahima Logo" />
+        <span>Fahima Akter</span>
+      </a>
+    </div>
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+    <div class="menu">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ✅ Sidebar (Mobile) -->
+  <div id="sidebar" class="sidebar">
+    <a href="home.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ✅ Blog Section -->
+  <section class="topic-section">
+    <h2>My Blog</h2>
+    <p>Welcome to my blog! I love sharing my creative journey, projects, and inspirations from the world of fashion and design.</p>
+
+    <div class="gallery-grid">
+
+      <!-- Blog Post 1 -->
+      <div class="blog-post">
+        <img src="image/blog1.jpg" alt="First Design Project">
+        <h3>My First University Project</h3>
+        <p class="date">June 24, 2025</p>
+        <p>This was the beginning of my fashion design career—where I learned the importance of planning, fabric choices, and sketching from scratch.</p>
+      </div>
+
+      <!-- Blog Post 2 -->
+      <div class="blog-post">
+        <img src="image/blog2.jpg" alt="Traditional Dress">
+        <h3>Reviving Traditional Dress</h3>
+        <p class="date">May 15, 2025</p>
+        <p>I recreated traditional Bangladeshi dresses with a modern twist, focusing on elegance and detailed hand-stitching.</p>
+      </div>
+
+      <!-- Blog Post 3 -->
+      <div class="blog-post">
+        <img src="image/blog3.jpg" alt="Miniature Draping">
+        <h3>Miniature Draping Exploration</h3>
+        <p class="date">April 3, 2025</p>
+        <p>This blog highlights my experiments with miniature dress forms — understanding the draping process before working on full-size garments.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer class="site-footer">
+    <p>© 2025 Fahima Akter — All rights reserved.</p>
+    <p>Follow me on 
+      <a href="https://www.facebook.com/fahima.akter.825253" target="_blank">Facebook</a>
+    </p>
+  </footer>
+
+</body>
+</html>

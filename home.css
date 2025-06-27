@@ -1,0 +1,528 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 50%), url('image/a.jpg');
+  background-attachment: fixed;
+
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  
+}
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+/* ✅ Navbar Layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+/* ✅ Logo Image + Text */
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 30px;
+  color: #ff7200;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+/* ✅ Menu */
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.menu ul li a:hover {
+  color: #ff7200;
+}
+.work-section {
+  text-align: center;
+  margin-top: 100px;
+  color: #fff;
+}
+
+.work-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #ff7200;
+  font-family: cursive;
+}
+
+.work-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.work-btn {
+  padding: 12px 25px;
+  background-color: #ff7200;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.work-btn:hover {
+  background-color: #fff;
+  color: #ff7200;
+  border: 2px solid #ff7200;
+}
+.site-footer {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  color: #fff;
+  font-size: 0.95em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 100px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer p {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ✅ Responsive for Mobile Devices */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .logo span {
+    font-size: 24px;
+  }
+
+  .logo img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .work-section h2 {
+    font-size: 1.8em;
+  }
+
+  .work-buttons {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .work-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .work-btn {
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+.work-btn:hover {
+  transform: translateY(-3px);
+  background-color: #fff;
+  color: #ff7200;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+  .site-footer {
+    font-size: 0.85em;
+    padding: 15px 10px;
+  }
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #ff7200;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Sidebar */
+.sidebar {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #fff;
+  width: 220px;
+  height: 100vh;
+  padding-top: 80px;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: 0.3s ease;
+}
+
+.sidebar a {
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #ff7200;
+  color: #fff;
+}
+
+/* Sidebar active */
+.sidebar.active {
+  display: flex;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+}
+.fashion-quote {
+  text-align: center;
+  font-size: 1.2em;
+  font-style: italic;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 15px 30px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-left: 5px solid #ff7200;
+  border-right: 5px solid #ff7200;
+  border-radius: 10px;
+  font-family: 'Georgia', serif;
+}
+@media (max-width: 768px) {
+  .fashion-quote {
+    font-size: 1em;
+    padding: 12px 20px;
+    margin: 15px 20px;
+    border-left: 3px solid #ff7200;
+    border-right: 3px solid #ff7200;
+  }
+}
+.welcome-section {
+  text-align: center;
+  color: #fff;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  border: 2px solid #ff7200;
+  animation: fadeIn 1s ease-in-out both;
+}
+
+.welcome-section h1 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+  color: #ff7200;
+  font-family: 'Cursive', sans-serif;
+}
+
+.welcome-section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  font-family: 'Georgia', serif;
+}
+
+/* Fade-in animation (already in your CSS) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.welcome-section h1 {
+  font-size: 1.6em;
+}
+
+.welcome-section p {
+  font-size: 1em;
+  padding: 0 10px;
+}
+.skills-section {
+  text-align: center;
+  color: #fff;
+  margin: 60px auto;
+}
+
+.skills-section h2 {
+  font-size: 2em;
+  color: #ff7200;
+  font-family: cursive;
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.skills-list li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border: 1px solid #ff7200;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.testimonial-section {
+  text-align: center;
+  color: #fff;
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 30px;
+  border-left: 5px solid #ff7200;
+  border-right: 5px solid #ff7200;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+}
+
+.testimonial-section h2 {
+  color: #ff7200;
+  font-family: cursive;
+  margin-bottom: 20px;
+}
+
+.testimonial-section blockquote {
+  font-style: italic;
+  font-size: 1.1em;
+}
+.typewriter-section {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ff7200;
+  font-size: 1.5em;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .typewriter-section {
+    font-size: 1.2em;
+    padding: 0 20px;
+  }
+}
+/* ✨ Fashion Quote */
+.quote-section {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.3em;
+  padding: 25px 15px;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* ✨ Typewriter Effect Section */
+.typewriter-section {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff7200;
+  font-size: 1.5em;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .typewriter-section {
+    font-size: 1.2em;
+    padding: 0 20px;
+  }
+
+  .quote-section {
+    font-size: 1.1em;
+    padding: 20px;
+  }
+}
+
+.cta-section {
+  background-color: hwb(36 5% 1%);
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 12px;
+  margin: 60px 20px;
+}
+
+.cta-section h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.cta-section a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.parallax-section {
+  background: url('image/fabric.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+.divider svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+.blob-wrapper {
+  position: absolute;
+  top: -80px;
+  left: -100px;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.blob {
+  width: 400px;
+  height: 400px;
+  opacity: 0.1;
+}
+html {
+  scroll-behavior: smooth;
+}
+.social-icons {
+  position: fixed;
+  bottom: 25px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.social-icons a {
+  color: #ff7200;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #ff7200;
+  color: white;
+}
+#scrollTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+  z-index: 999;
+  background-color: #ff7200;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#scrollTopBtn:hover {
+  background-color: #e65100;
+}
