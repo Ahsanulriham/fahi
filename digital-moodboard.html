@@ -11,21 +11,26 @@
 </head>
 <body>
 <div id="scroll-bar"></div>
-  <div class="navbar">
-    <div class="logo">
-      <a href="home.html">
-        <img src="image/logo.jpg" alt="Logo">
-        <span>Fahima Akter</span>
-      </a>
-    </div>
-    <div class="menu">
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
+ <div class="navbar">
+  <div class="logo">
+    <a href="home.html">
+      <img src="image/logo.jpg" alt="Logo">
+      <span>Fahima Akter</span>
+    </a>
+  </div>
+  <div class="hamburger" onclick="toggleSidebar()">
+    &#9776;
+  </div>
+  <div class="menu" id="nav-menu">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
   </div>
 
  <section class="topic-section">
@@ -78,6 +83,12 @@
     <p>© 2025 Fahima Akter — All rights reserved.</p>
     <p><a href="https://www.facebook.com/fahima.akter.825253" target="_blank">Facebook</a></p>
   </footer>
+<script>
+  function toggleSidebar() {
+    const menu = document.getElementById("nav-menu");
+    menu.classList.toggle("active");
+  }
+</script>
 
 </body>
 </html>
