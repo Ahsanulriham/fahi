@@ -106,12 +106,46 @@
   <blockquote>
     “Fahima's creativity is inspiring! Her work is full of life and detail.” — <strong>Mr Riham, co worker</strong>
   </blockquote>
-  <blockquote>"Fahima’s attention to detail is inspiring!" – Ms. Umme Kulsum Akter,  co worker</blockquote>
+  <blockquote>"Fahima’s attention to detail is inspiring!" – Ms. Umme Kulsum Akter,  co worker</blockquote><br>
+<!-- 🌟 DTG Fashion Show Highlights -->
+<section class="fashion-show-section fade-in">
+  <h2>🌟 DTG Fashion Show Highlights</h2>
+<h2>🌟 DTG Fashion Show Highlights</h2>
+   <p>
+    I had the honor of representing <strong>Sonargaon University</strong> in the prestigious 
+    <strong>DTG Fashion Show</strong>. As both the <strong>designer</strong> and <strong>model</strong>, 
+    I showcased my original dress design and proudly walked the ramp. This unforgettable experience reflects 
+    my passion, creativity, and dedication to fashion.
+  </p>
+  <div class="slideshow-container">
+    <div class="slide fade"><img src="show/show (1).jpeg" alt="DTG Fashion Show 1"></div>
+    <div class="slide fade"><img src="show/show (2).jpeg" alt="DTG Fashion Show 2"></div>
+    <div class="slide fade"><img src="show/show (3).jpeg" alt="DTG Fashion Show 3"></div>
+    <div class="slide fade"><img src="show/show (4).jpeg" alt="DTG Fashion Show 4"></div>
+    <div class="slide fade"><img src="show/show (5).jpeg" alt ="DTG Fashion Show 5"></div>
+    <div class="slide fade"><img src="show/show (6).jpeg" alt="DTG Fashion Show 6"></div>
+    <div class="slide fade"><img src="show/show (7).jpeg" alt="DTG Fashion Show 7"></div>
+    <div class="slide fade"><img src="show/show (8).jpeg" alt="DTG Fashion Show 8"></div>
+    <div class="slide fade"><img src="show/show (9).jpeg" alt="DTG Fashion Show 9"></div>
 
+    <!-- Arrows -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
 
-
-
-
+  <!-- Dots -->
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+    <span class="dot" onclick="currentSlide(8)"></span>
+    <span class="dot" onclick="currentSlide(9)"></span>
+  </div>
+</section>
 </section>
 <div class="cta-section fade-in">
   <h2>Like My Work?</h2>
@@ -188,7 +222,38 @@ document.addEventListener("DOMContentLoaded", typeEffect);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
 
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Dot controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active");
+}
+
+// Optional: Auto-slide
+setInterval(() => { plusSlides(1); }, 5000); // every 5 seconds
+</script>
 </body>
 <!-- ✅ Footer -->
 <footer class="site-footer">
