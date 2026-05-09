@@ -1,442 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fahima Akter | Fashion Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahima Akter | Home</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 :root{
-    --pink:#ffb6c9;
-    --rose:#ff5f8f;
-    --soft:#fff5f8;
-    --gold:#d4af37;
-    --dark:#2d2d2d;
-    --glass:rgba(255,255,255,0.18);
+  --pink:#ffd6e7;
+  --rose:#ff6f91;
+  --soft:#fff7fa;
+  --gold:#d4af37;
+  --dark:#2b2b2b;
+  --glass:rgba(255,255,255,0.18);
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(-45deg,#fff0f5,#ffe3ec,#fff7fa,#ffd6e7);
-    background-size:400% 400%;
-    animation:bgMove 15s ease infinite;
-    overflow-x:hidden;
-    color:var(--dark);
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(-45deg,#fff0f5,#ffe4ec,#fffaf7,#ffd6e7);
+  background-size:400% 400%;
+  animation:bgMove 15s ease infinite;
+  overflow-x:hidden;
+  color:var(--dark);
 }
 
 @keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 /* NAVBAR */
 
 .navbar{
-    width:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:1000;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 60px;
-    backdrop-filter:blur(18px);
-    background:rgba(255,255,255,0.15);
-    border-bottom:1px solid rgba(255,255,255,0.3);
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 7%;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(255,255,255,0.3);
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:14px;
+.logo a{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
 }
 
 .logo img{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid white;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid white;
 }
 
 .logo span{
-    font-family:'Playfair Display',serif;
-    font-size:1.6rem;
-    font-weight:700;
-    color:#c44569;
+  font-size:1.7rem;
+  font-family:'Playfair Display',serif;
+  color:#c44569;
+  font-weight:700;
 }
 
 .menu ul{
-    display:flex;
-    gap:30px;
-    list-style:none;
+  display:flex;
+  gap:30px;
+  list-style:none;
 }
 
 .menu ul li a{
-    text-decoration:none;
-    color:#333;
-    font-weight:600;
-    position:relative;
-    transition:0.3s;
+  text-decoration:none;
+  color:#333;
+  font-weight:600;
+  transition:0.3s;
+  position:relative;
 }
 
 .menu ul li a::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    width:0;
-    height:2px;
-    background:var(--rose);
-    transition:0.4s;
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:var(--rose);
+  transition:0.4s;
 }
 
 .menu ul li a:hover::after{
-    width:100%;
+  width:100%;
 }
 
 .menu ul li a:hover{
-    color:var(--rose);
+  color:var(--rose);
 }
 
-/* HERO */
+.hamburger{
+  display:none;
+  font-size:1.8rem;
+  cursor:pointer;
+}
+
+.sidebar{
+  position:fixed;
+  top:0;
+  right:-250px;
+  width:250px;
+  height:100vh;
+  background:white;
+  display:flex;
+  flex-direction:column;
+  padding-top:100px;
+  transition:0.4s;
+  z-index:9999;
+  box-shadow:-10px 0 20px rgba(0,0,0,0.1);
+}
+
+.sidebar.active{
+  right:0;
+}
+
+.sidebar a{
+  text-decoration:none;
+  color:#333;
+  padding:20px 30px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.sidebar a:hover{
+  background:var(--pink);
+}
+
+/* HERO SECTION */
 
 .hero{
-    height:100vh;
-    background:url('image/banner.jpg') center/cover no-repeat;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
+  min-height:100vh;
+  background:url('image/banner.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
 }
 
 .hero::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.45);
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
 }
 
 .hero-content{
-    position:relative;
-    text-align:center;
-    color:white;
-    z-index:2;
-    animation:fadeUp 1.5s ease;
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:white;
+  padding:20px;
 }
 
 .hero-content h1{
-    font-size:5rem;
-    font-family:'Playfair Display',serif;
-    margin-bottom:20px;
-    text-shadow:0 10px 20px rgba(0,0,0,0.3);
+  font-size:5rem;
+  font-family:'Playfair Display',serif;
+  margin-bottom:20px;
+  animation:fadeUp 1.5s ease;
 }
 
 .hero-content p{
-    font-size:1.3rem;
-    margin-bottom:30px;
+  font-size:1.3rem;
+  margin-bottom:35px;
 }
 
 .hero-btn{
-    display:inline-block;
-    padding:16px 40px;
-    background:linear-gradient(45deg,var(--rose),var(--pink));
-    border-radius:50px;
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.4s;
-    box-shadow:0 10px 25px rgba(255,95,143,0.4);
+  display:inline-block;
+  padding:15px 38px;
+  border-radius:50px;
+  text-decoration:none;
+  background:linear-gradient(45deg,var(--rose),var(--pink));
+  color:white;
+  font-weight:600;
+  transition:0.4s;
+  box-shadow:0 10px 25px rgba(255,111,145,0.4);
 }
 
 .hero-btn:hover{
-    transform:translateY(-6px) scale(1.05);
+  transform:translateY(-6px) scale(1.05);
 }
 
-/* SECTION */
+/* SECTION STYLE */
 
 .section{
-    width:90%;
-    margin:80px auto;
-    padding:50px;
-    background:rgba(255,255,255,0.35);
-    backdrop-filter:blur(14px);
-    border-radius:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  width:90%;
+  margin:70px auto;
+  padding:50px;
+  background:rgba(255,255,255,0.35);
+  backdrop-filter:blur(14px);
+  border-radius:35px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 .section-title{
-    text-align:center;
-    font-size:3rem;
-    margin-bottom:30px;
-    font-family:'Playfair Display',serif;
-    color:#c44569;
+  text-align:center;
+  font-size:3rem;
+  font-family:'Playfair Display',serif;
+  color:#c44569;
+  margin-bottom:30px;
 }
 
-.quote{
-    text-align:center;
-    font-size:2rem;
-    color:#c44569;
-    font-family:'Great Vibes',cursive;
-    margin-top:30px;
+/* QUOTE */
+
+.fashion-quote{
+  text-align:center;
+  margin-top:40px;
+  font-size:2rem;
+  color:#c44569;
+  font-family:'Great Vibes',cursive;
 }
 
-.about p{
-    text-align:center;
-    line-height:1.9;
-    font-size:1.1rem;
+/* TYPEWRITER */
+
+.typewriter-section{
+  text-align:center;
+  margin-top:30px;
+}
+
+.typewriter-section h2{
+  font-size:2rem;
+  color:#c44569;
+}
+
+/* ABOUT */
+
+.welcome-section p{
+  text-align:center;
+  line-height:1.9;
+  font-size:1.1rem;
 }
 
 /* SKILLS */
 
-.skills{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-    margin-top:40px;
+.skills-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  list-style:none;
 }
 
-.skill-card{
-    padding:30px;
-    border-radius:25px;
-    background:white;
-    text-align:center;
-    transition:0.4s;
-    box-shadow:0 10px 20px rgba(0,0,0,0.06);
+.skills-list li{
+  padding:25px;
+  text-align:center;
+  background:white;
+  border-radius:25px;
+  font-weight:600;
+  transition:0.4s;
+  box-shadow:0 10px 20px rgba(0,0,0,0.06);
 }
 
-.skill-card:hover{
-    transform:translateY(-10px);
-    background:linear-gradient(45deg,var(--rose),var(--pink));
-    color:white;
+.skills-list li:hover{
+  transform:translateY(-10px);
+  background:linear-gradient(45deg,var(--rose),var(--pink));
+  color:white;
 }
 
-.skill-card i{
-    font-size:2.5rem;
-    margin-bottom:15px;
+/* PARALLAX */
+
+.parallax-section{
+  height:350px;
+  background:url('image/parallax.jpg') center/cover fixed;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-align:center;
+  position:relative;
 }
 
-/* GALLERY */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+.parallax-section::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.45);
 }
 
-.gallery-card{
-    overflow:hidden;
-    border-radius:25px;
-    position:relative;
-    cursor:pointer;
+.parallax-section h2,
+.parallax-section p{
+  position:relative;
+  z-index:2;
 }
 
-.gallery-card img{
-    width:100%;
-    height:320px;
-    object-fit:cover;
-    transition:0.6s;
+.parallax-section h2{
+  font-size:3rem;
+  margin-bottom:10px;
 }
 
-.gallery-card:hover img{
-    transform:scale(1.1);
+/* WORK */
+
+.work-buttons{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
 }
 
-.gallery-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
-    display:flex;
-    align-items:flex-end;
-    padding:20px;
-    color:white;
-    font-size:1.3rem;
-    font-weight:600;
+.work-btn{
+  text-decoration:none;
+  padding:22px;
+  border-radius:25px;
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.3);
+  color:#333;
+  font-weight:600;
+  text-align:center;
+  transition:0.4s;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.work-btn:hover{
+  transform:translateY(-10px) scale(1.03);
+  background:linear-gradient(45deg,var(--rose),var(--pink));
+  color:white;
+}
+
+.work-btn i{
+  margin-right:10px;
 }
 
 /* TESTIMONIAL */
 
-.testimonial{
-    text-align:center;
+.testimonial-section blockquote{
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  margin:20px auto;
+  max-width:800px;
+  line-height:1.8;
+  box-shadow:0 10px 20px rgba(0,0,0,0.05);
 }
 
-.testimonial blockquote{
-    margin:25px auto;
-    max-width:800px;
-    background:white;
-    padding:30px;
-    border-radius:25px;
-    font-style:italic;
-    box-shadow:0 10px 20px rgba(0,0,0,0.05);
+/* SLIDESHOW */
+
+.slideshow-container{
+  max-width:900px;
+  margin:40px auto;
+  position:relative;
+}
+
+.slide{
+  display:none;
+}
+
+.slide img{
+  width:100%;
+  border-radius:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.prev,.next{
+  cursor:pointer;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  padding:16px;
+  color:white;
+  font-size:2rem;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.prev{
+  left:10px;
+}
+
+.next{
+  right:10px;
+}
+
+.prev:hover,.next:hover{
+  color:var(--pink);
+}
+
+.dots{
+  text-align:center;
+  margin-top:20px;
+}
+
+.dot{
+  width:15px;
+  height:15px;
+  background:#bbb;
+  display:inline-block;
+  border-radius:50%;
+  margin:0 5px;
+  cursor:pointer;
+}
+
+.active{
+  background:var(--rose);
+}
+
+/* CTA */
+
+.cta-section{
+  text-align:center;
+}
+
+.cta-section p{
+  margin-top:15px;
+}
+
+.cta-section a{
+  color:#c44569;
+  text-decoration:none;
+  font-weight:600;
 }
 
 /* SOCIAL */
 
 .social-icons{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    z-index:1000;
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  z-index:999;
 }
 
 .social-icons a{
-    width:55px;
-    height:55px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:white;
-    color:#c44569;
-    text-decoration:none;
-    font-size:1.3rem;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
-    transition:0.4s;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-decoration:none;
+  color:#c44569;
+  font-size:1.3rem;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.4s;
 }
 
 .social-icons a:hover{
-    transform:translateY(-8px) scale(1.08);
-    background:linear-gradient(45deg,var(--rose),var(--pink));
-    color:white;
-}
-
-/* CTA */
-
-.cta{
-    text-align:center;
-}
-
-.cta p{
-    margin-top:15px;
-    font-size:1.1rem;
-}
-
-.cta a{
-    color:#c44569;
-    font-weight:600;
-    text-decoration:none;
-}
-
-/* FOOTER */
-
-footer{
-    margin-top:80px;
-    padding:40px;
-    text-align:center;
-    background:linear-gradient(45deg,var(--rose),var(--pink));
-    color:white;
-    border-top-left-radius:40px;
-    border-top-right-radius:40px;
-}
-
-footer a{
-    color:white;
-    text-decoration:none;
-    font-weight:600;
+  transform:translateY(-8px);
+  background:linear-gradient(45deg,var(--rose),var(--pink));
+  color:white;
 }
 
 /* SCROLL BUTTON */
 
-#topBtn{
-    position:fixed;
-    left:25px;
-    bottom:25px;
-    width:55px;
-    height:55px;
-    border:none;
-    border-radius:50%;
-    background:linear-gradient(45deg,var(--rose),var(--pink));
-    color:white;
-    font-size:1.2rem;
-    cursor:pointer;
-    display:none;
-    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+#scrollTopBtn{
+  position:fixed;
+  left:25px;
+  bottom:25px;
+  width:55px;
+  height:55px;
+  border:none;
+  border-radius:50%;
+  background:linear-gradient(45deg,var(--rose),var(--pink));
+  color:white;
+  font-size:1.3rem;
+  cursor:pointer;
+  display:none;
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* FOOTER */
+
+.site-footer{
+  margin-top:80px;
+  background:linear-gradient(45deg,var(--rose),var(--pink));
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+  border-top-left-radius:40px;
+  border-top-right-radius:40px;
+}
+
+.site-footer a{
+  color:white;
+  text-decoration:none;
+  font-weight:600;
 }
 
 /* ANIMATION */
 
 .fade-in{
-    opacity:0;
-    transform:translateY(50px);
-    animation:fadeUp 1.2s ease forwards;
+  animation:fadeUp 1.3s ease;
 }
 
 @keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 /* RESPONSIVE */
 
 @media(max-width:900px){
 
-    .navbar{
-        padding:15px 20px;
-    }
+  .menu{
+    display:none;
+  }
 
-    .menu ul{
-        gap:15px;
-    }
+  .hamburger{
+    display:block;
+  }
 
-    .hero-content h1{
-        font-size:3rem;
-    }
+  .hero-content h1{
+    font-size:3rem;
+  }
 
-    .section{
-        padding:30px 20px;
-    }
+  .section{
+    padding:35px 20px;
+  }
 
-    .section-title{
-        font-size:2.2rem;
-    }
+  .section-title{
+    font-size:2.2rem;
+  }
 
 }
 
 @media(max-width:600px){
 
-    .menu{
-        display:none;
-    }
+  .hero-content h1{
+    font-size:2.3rem;
+  }
 
-    .hero-content h1{
-        font-size:2.4rem;
-    }
+  .hero-content p{
+    font-size:1rem;
+  }
 
-    .hero-content p{
-        font-size:1rem;
-    }
+  .fashion-quote{
+    font-size:1.4rem;
+  }
 
-    .quote{
-        font-size:1.5rem;
-    }
+  .parallax-section h2{
+    font-size:2rem;
+  }
 
 }
 
@@ -449,17 +582,29 @@ footer a{
 <nav class="navbar">
 
 <div class="logo">
-<img src="image/logo.jpg" alt="logo">
+<a href="home.html">
+<img src="image/logo.jpg" alt="Fahima Logo">
 <span>Fahima Akter</span>
+</a>
+</div>
+
+<div class="hamburger" onclick="toggleSidebar()">
+☰
+</div>
+
+<div class="sidebar" id="sidebar">
+<a href="home.html">Home</a>
+<a href="about.html">About Me</a>
+<a href="blog.html">Blog</a>
+<a href="contact.html">Contact</a>
 </div>
 
 <div class="menu">
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="home.html">Home</a></li>
+<li><a href="about.html">About Me</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
 </ul>
 </div>
 
@@ -467,110 +612,155 @@ footer a{
 
 <!-- HERO -->
 
-<section class="hero" id="home">
+<section class="hero">
 <div class="hero-content">
 <h1>Elegance in Every Thread</h1>
-<p>Fashion Designer • Artist • Dream Creator</p>
-<a href="#gallery" class="hero-btn">Explore My Work</a>
+<p>Fashion Designer • Creative Artist • Dream Creator</p>
+<a href="illustrations.html" class="hero-btn">Explore My Work</a>
 </div>
 </section>
 
-<!-- ABOUT -->
+<!-- QUOTE -->
 
-<section class="section about fade-in" id="about">
+<div class="fashion-quote fade-in">
+<p>
+"Fashion is the art of self-expression — I don't just design clothes, I design dreams."
+</p>
+</div>
+
+<!-- TYPEWRITER -->
+
+<section class="typewriter-section fade-in">
+<h2>👗 <span id="typewriter"></span></h2>
+</section>
+
+<!-- WELCOME -->
+
+<section class="section welcome-section fade-in">
 <h2 class="section-title">Welcome to My Creative World</h2>
 
 <p>
-I'm <strong>Fahima Akter</strong>, a passionate fashion design student with a love for elegance, creativity, texture, and artistic storytelling. Every design I create reflects emotion, imagination, and beauty.
+I'm <strong>Fahima Akter</strong>, a passionate fashion design student. Explore my journey through fabric, texture, embroidery, draping, and imagination. Every design tells a story of creativity and elegance.
 </p>
-
-<div class="quote">
-“Fashion is the art of self‑expression — I don't just design clothes, I design dreams.”
-</div>
-
 </section>
 
 <!-- SKILLS -->
 
-<section class="section fade-in" id="skills">
+<section class="section fade-in">
 <h2 class="section-title">My Skills</h2>
 
-<div class="skills">
-
-<div class="skill-card">
-<i class="fas fa-pencil-ruler"></i>
-<h3>Fashion Illustration</h3>
-</div>
-
-<div class="skill-card">
-<i class="fas fa-shirt"></i>
-<h3>Draping & Pattern</h3>
-</div>
-
-<div class="skill-card">
-<i class="fas fa-scissors"></i>
-<h3>Embroidery</h3>
-</div>
-
-<div class="skill-card">
-<i class="fas fa-palette"></i>
-<h3>Digital Moodboard</h3>
-</div>
-
-</div>
+<ul class="skills-list">
+<li>Fashion Illustration</li>
+<li>Embroidery & Hand Stitch</li>
+<li>Adobe Illustrator</li>
+<li>Draping & Pattern Making</li>
+<li>Digital Moodboard</li>
+</ul>
 </section>
 
-<!-- GALLERY -->
+<!-- PARALLAX -->
 
-<section class="section fade-in" id="gallery">
-<h2 class="section-title">My Fashion Gallery</h2>
+<section class="parallax-section fade-in">
+<h2>Inspired by Fabric</h2>
+<p>The soul of design lies in the threads that hold it together.</p>
+</section>
 
-<div class="gallery">
+<!-- WORK -->
 
-<div class="gallery-card">
-<img src="image/design1.jpg" alt="design">
-<div class="gallery-overlay">Illustrations</div>
-</div>
+<section class="section fade-in">
+<h2 class="section-title">My Creative Works</h2>
 
-<div class="gallery-card">
-<img src="image/design2.jpg" alt="design">
-<div class="gallery-overlay">Hand Stitch</div>
-</div>
+<div class="work-buttons">
 
-<div class="gallery-card">
-<img src="image/design3.jpg" alt="design">
-<div class="gallery-overlay">Draping</div>
-</div>
+<a href="illustrations.html" class="work-btn"><i class="fas fa-paint-brush"></i>Illustrations Gallery</a>
 
-<div class="gallery-card">
-<img src="image/design4.jpg" alt="design">
-<div class="gallery-overlay">Mood Boards</div>
-</div>
+<a href="moodboards.html" class="work-btn"><i class="fas fa-image"></i>Mood Boards Gallery</a>
+
+<a href="handstitch.html" class="work-btn"><i class="fas fa-scissors"></i>Hand Stitch Gallery</a>
+
+<a href="ribbon.html" class="work-btn"><i class="fas fa-ribbon"></i>Ribbon Work</a>
+
+<a href="zardesi.html" class="work-btn"><i class="fas fa-star"></i>Zardesi Work</a>
+
+<a href="dyeing.html" class="work-btn"><i class="fas fa-fill-drip"></i>Dyeing Work</a>
+
+<a href="painting.html" class="work-btn"><i class="fas fa-palette"></i>Painting</a>
+
+<a href="draping.html" class="work-btn"><i class="fas fa-shirt"></i>Miniature Draping</a>
+
+<a href="digital-illustrations.html" class="work-btn"><i class="fas fa-laptop"></i>Digital Illustrations</a>
+
+<a href="elements.html" class="work-btn"><i class="fas fa-shapes"></i>Elements of Design</a>
+
+<a href="digital-moodboard.html" class="work-btn"><i class="fas fa-desktop"></i>Digital Moodboard</a>
+
+<a href="exclusive-dress.html" class="work-btn"><i class="fas fa-crown"></i>Exclusive Dress Design</a>
 
 </div>
 </section>
 
 <!-- TESTIMONIAL -->
 
-<section class="section testimonial fade-in">
+<section class="section testimonial-section fade-in">
 <h2 class="section-title">What Others Say</h2>
 
 <blockquote>
-“Fahima's creativity is inspiring! Her work is full of life and detail.” — Mr Riham
+“Fahima's creativity is inspiring! Her work is full of life and detail.” — <strong>Mr Riham</strong>
 </blockquote>
 
 <blockquote>
-“Fahima’s attention to detail is truly exceptional.” — Umme Kulsum Akter
+“Fahima’s attention to detail is inspiring!” — <strong>Ms. Umme Kulsum Akter</strong>
 </blockquote>
+
+</section>
+
+<!-- FASHION SHOW -->
+
+<section class="section fade-in">
+<h2 class="section-title">🌟 DTG Fashion Show Highlights</h2>
+
+<p style="text-align:center; line-height:1.9; max-width:900px; margin:auto;">
+I had the honor of representing <strong>Sonargaon University</strong> in the prestigious DTG Fashion Show. As both the designer and model, I showcased my original dress design and proudly walked the ramp.
+</p>
+
+<div class="slideshow-container">
+
+<div class="slide fade">
+<img src="show/show (1).jpeg" alt="Fashion Show 1">
+</div>
+
+<div class="slide fade">
+<img src="show/show (2).jpeg" alt="Fashion Show 2">
+</div>
+
+<div class="slide fade">
+<img src="show/show (3).jpeg" alt="Fashion Show 3">
+</div>
+
+<div class="slide fade">
+<img src="show/show (4).jpeg" alt="Fashion Show 4">
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div class="dots">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
+<span class="dot" onclick="currentSlide(4)"></span>
+</div>
 
 </section>
 
 <!-- CTA -->
 
-<section class="section cta fade-in" id="contact">
-<h2 class="section-title">Let's Connect</h2>
+<section class="section cta-section fade-in">
+<h2 class="section-title">Like My Work?</h2>
 <p>
-Feel free to reach out or follow me on social media to explore more of my creative journey.
+Feel free to <a href="contact.html">reach out</a> or follow me on social media.
 </p>
 </section>
 
@@ -581,59 +771,143 @@ Feel free to reach out or follow me on social media to explore more of my creati
 <a href="https://instagram.com/___fahima________" target="_blank"><i class="fab fa-instagram"></i></a>
 </div>
 
-<!-- FOOTER -->
-
-<footer>
-<p>© 2026 Fahima Akter — All Rights Reserved</p>
-<p>Designed by Riham</p>
-</footer>
-
 <!-- TOP BUTTON -->
 
-<button id="topBtn">↑</button>
+<button onclick="scrollToTop()" id="scrollTopBtn">↑</button>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+<p>© 2026 Fahima Akter — All rights reserved.</p>
+<p>Designed with ❤ by Riham</p>
+</footer>
 
 <script>
 
-const topBtn = document.getElementById('topBtn');
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('active');
+}
 
-window.addEventListener('scroll',()=>{
+window.addEventListener('click',function(e){
 
-    if(window.scrollY > 300){
-        topBtn.style.display='block';
-    }
-    else{
-        topBtn.style.display='none';
-    }
+const sidebar=document.getElementById('sidebar');
+const hamburger=document.querySelector('.hamburger');
 
-});
-
- topBtn.addEventListener('click',()=>{
-    window.scrollTo({
-        top:0,
-        behavior:'smooth'
-    });
- });
-
-// FADE ANIMATION
-
-const fadeElements = document.querySelectorAll('.fade-in');
-
-const observer = new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-    entry.target.style.opacity='1';
-    entry.target.style.transform='translateY(0)';
+if(!sidebar.contains(e.target) && !hamburger.contains(e.target)){
+  sidebar.classList.remove('active');
 }
 
 });
 
+// TYPEWRITER
+
+const messages=[
+  'Welcome to Fahima Akter’s Creative World',
+  'Fashion is Art, and You are the Canvas',
+  'Explore Illustrations, Draping & More'
+];
+
+let messageIndex=0;
+let charIndex=0;
+const speed=100;
+const element=document.getElementById('typewriter');
+
+function typeEffect(){
+
+if(charIndex < messages[messageIndex].length){
+
+  element.textContent += messages[messageIndex].charAt(charIndex);
+  charIndex++;
+  setTimeout(typeEffect,speed);
+
+}
+else{
+  setTimeout(eraseEffect,2000);
+}
+
+}
+
+function eraseEffect(){
+
+if(charIndex > 0){
+
+  element.textContent = messages[messageIndex].substring(0,charIndex-1);
+  charIndex--;
+  setTimeout(eraseEffect,speed/2);
+
+}
+else{
+
+  messageIndex=(messageIndex+1)%messages.length;
+  setTimeout(typeEffect,500);
+
+}
+
+}
+
+document.addEventListener('DOMContentLoaded',typeEffect);
+
+// SCROLL BUTTON
+
+const scrollBtn=document.getElementById('scrollTopBtn');
+
+window.onscroll=function(){
+
+  if(window.scrollY > 300){
+    scrollBtn.style.display='block';
+  }
+  else{
+    scrollBtn.style.display='none';
+  }
+
+};
+
+function scrollToTop(){
+
+window.scrollTo({
+  top:0,
+  behavior:'smooth'
 });
 
-fadeElements.forEach(el=>{
-observer.observe(el);
-});
+}
+
+// SLIDESHOW
+
+let slideIndex=1;
+showSlides(slideIndex);
+
+function plusSlides(n){
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n){
+  showSlides(slideIndex=n);
+}
+
+function showSlides(n){
+
+let slides=document.getElementsByClassName('slide');
+let dots=document.getElementsByClassName('dot');
+
+if(n > slides.length){slideIndex=1}
+if(n < 1){slideIndex=slides.length}
+
+for(let i=0;i<slides.length;i++){
+  slides[i].style.display='none';
+}
+
+for(let i=0;i<dots.length;i++){
+  dots[i].classList.remove('active');
+}
+
+slides[slideIndex-1].style.display='block';
+dots[slideIndex-1].classList.add('active');
+
+}
+
+setInterval(()=>{
+  plusSlides(1);
+},5000);
 
 </script>
 
