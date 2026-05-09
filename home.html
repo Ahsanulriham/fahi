@@ -3,913 +3,288 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fahima Akter | Home</title>
+  <title>Fahima Akter</title>
+<!-- Favicon setup -->
+<link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon_io/favicon.ico" type="image/x-icon">
 
-  <!-- Favicon -->
-  <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+<!-- PNG fallback for better browser support -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<!-- Apple devices -->
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Web app manifest -->
+<link rel="manifest" href="favicon_io/site.webmanifest">
 
-<style>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
 
-:root{
-  --pink:#ffd6e7;
-  --rose:#ff6f91;
-  --soft:#fff7fa;
-  --gold:#d4af37;
-  --dark:#2b2b2b;
-  --glass:rgba(255,255,255,0.18);
-}
 
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(-45deg,#fff0f5,#ffe4ec,#fffaf7,#ffd6e7);
-  background-size:400% 400%;
-  animation:bgMove 15s ease infinite;
-  overflow-x:hidden;
-  color:var(--dark);
-}
-
-@keyframes bgMove{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-
-/* NAVBAR */
-
-.navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:1000;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 7%;
-  background:rgba(255,255,255,0.15);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid rgba(255,255,255,0.3);
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-.logo a{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-}
-
-.logo img{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid white;
-}
-
-.logo span{
-  font-size:1.7rem;
-  font-family:'Playfair Display',serif;
-  color:#c44569;
-  font-weight:700;
-}
-
-.menu ul{
-  display:flex;
-  gap:30px;
-  list-style:none;
-}
-
-.menu ul li a{
-  text-decoration:none;
-  color:#333;
-  font-weight:600;
-  transition:0.3s;
-  position:relative;
-}
-
-.menu ul li a::after{
-  content:'';
-  position:absolute;
-  left:0;
-  bottom:-5px;
-  width:0;
-  height:2px;
-  background:var(--rose);
-  transition:0.4s;
-}
-
-.menu ul li a:hover::after{
-  width:100%;
-}
-
-.menu ul li a:hover{
-  color:var(--rose);
-}
-
-.hamburger{
-  display:none;
-  font-size:1.8rem;
-  cursor:pointer;
-}
-
-.sidebar{
-  position:fixed;
-  top:0;
-  right:-250px;
-  width:250px;
-  height:100vh;
-  background:white;
-  display:flex;
-  flex-direction:column;
-  padding-top:100px;
-  transition:0.4s;
-  z-index:9999;
-  box-shadow:-10px 0 20px rgba(0,0,0,0.1);
-}
-
-.sidebar.active{
-  right:0;
-}
-
-.sidebar a{
-  text-decoration:none;
-  color:#333;
-  padding:20px 30px;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.sidebar a:hover{
-  background:var(--pink);
-}
-
-/* HERO SECTION */
-
-.hero{
-  min-height:100vh;
-  background:url('image/banner.jpg') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-}
-
-.hero::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  color:white;
-  padding:20px;
-}
-
-.hero-content h1{
-  font-size:5rem;
-  font-family:'Playfair Display',serif;
-  margin-bottom:20px;
-  animation:fadeUp 1.5s ease;
-}
-
-.hero-content p{
-  font-size:1.3rem;
-  margin-bottom:35px;
-}
-
-.hero-btn{
-  display:inline-block;
-  padding:15px 38px;
-  border-radius:50px;
-  text-decoration:none;
-  background:linear-gradient(45deg,var(--rose),var(--pink));
-  color:white;
-  font-weight:600;
-  transition:0.4s;
-  box-shadow:0 10px 25px rgba(255,111,145,0.4);
-}
-
-.hero-btn:hover{
-  transform:translateY(-6px) scale(1.05);
-}
-
-/* SECTION STYLE */
-
-.section{
-  width:90%;
-  margin:70px auto;
-  padding:50px;
-  background:rgba(255,255,255,0.35);
-  backdrop-filter:blur(14px);
-  border-radius:35px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-.section-title{
-  text-align:center;
-  font-size:3rem;
-  font-family:'Playfair Display',serif;
-  color:#c44569;
-  margin-bottom:30px;
-}
-
-/* QUOTE */
-
-.fashion-quote{
-  text-align:center;
-  margin-top:40px;
-  font-size:2rem;
-  color:#c44569;
-  font-family:'Great Vibes',cursive;
-}
-
-/* TYPEWRITER */
-
-.typewriter-section{
-  text-align:center;
-  margin-top:30px;
-}
-
-.typewriter-section h2{
-  font-size:2rem;
-  color:#c44569;
-}
-
-/* ABOUT */
-
-.welcome-section p{
-  text-align:center;
-  line-height:1.9;
-  font-size:1.1rem;
-}
-
-/* SKILLS */
-
-.skills-list{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-  list-style:none;
-}
-
-.skills-list li{
-  padding:25px;
-  text-align:center;
-  background:white;
-  border-radius:25px;
-  font-weight:600;
-  transition:0.4s;
-  box-shadow:0 10px 20px rgba(0,0,0,0.06);
-}
-
-.skills-list li:hover{
-  transform:translateY(-10px);
-  background:linear-gradient(45deg,var(--rose),var(--pink));
-  color:white;
-}
-
-/* PARALLAX */
-
-.parallax-section{
-  height:350px;
-  background:url('image/parallax.jpg') center/cover fixed;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  text-align:center;
-  position:relative;
-}
-
-.parallax-section::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.45);
-}
-
-.parallax-section h2,
-.parallax-section p{
-  position:relative;
-  z-index:2;
-}
-
-.parallax-section h2{
-  font-size:3rem;
-  margin-bottom:10px;
-}
-
-/* WORK */
-
-.work-buttons{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-.work-btn{
-  text-decoration:none;
-  padding:22px;
-  border-radius:25px;
-  background:rgba(255,255,255,0.2);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,0.3);
-  color:#333;
-  font-weight:600;
-  text-align:center;
-  transition:0.4s;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.work-btn:hover{
-  transform:translateY(-10px) scale(1.03);
-  background:linear-gradient(45deg,var(--rose),var(--pink));
-  color:white;
-}
-
-.work-btn i{
-  margin-right:10px;
-}
-
-/* TESTIMONIAL */
-
-.testimonial-section blockquote{
-  background:white;
-  padding:30px;
-  border-radius:25px;
-  margin:20px auto;
-  max-width:800px;
-  line-height:1.8;
-  box-shadow:0 10px 20px rgba(0,0,0,0.05);
-}
-
-/* SLIDESHOW */
-
-.slideshow-container{
-  max-width:900px;
-  margin:40px auto;
-  position:relative;
-}
-
-.slide{
-  display:none;
-}
-
-.slide img{
-  width:100%;
-  border-radius:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
-}
-
-.prev,.next{
-  cursor:pointer;
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  padding:16px;
-  color:white;
-  font-size:2rem;
-  font-weight:bold;
-  transition:0.3s;
-}
-
-.prev{
-  left:10px;
-}
-
-.next{
-  right:10px;
-}
-
-.prev:hover,.next:hover{
-  color:var(--pink);
-}
-
-.dots{
-  text-align:center;
-  margin-top:20px;
-}
-
-.dot{
-  width:15px;
-  height:15px;
-  background:#bbb;
-  display:inline-block;
-  border-radius:50%;
-  margin:0 5px;
-  cursor:pointer;
-}
-
-.active{
-  background:var(--rose);
-}
-
-/* CTA */
-
-.cta-section{
-  text-align:center;
-}
-
-.cta-section p{
-  margin-top:15px;
-}
-
-.cta-section a{
-  color:#c44569;
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* SOCIAL */
-
-.social-icons{
-  position:fixed;
-  right:25px;
-  bottom:25px;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  z-index:999;
-}
-
-.social-icons a{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  background:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-decoration:none;
-  color:#c44569;
-  font-size:1.3rem;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transition:0.4s;
-}
-
-.social-icons a:hover{
-  transform:translateY(-8px);
-  background:linear-gradient(45deg,var(--rose),var(--pink));
-  color:white;
-}
-
-/* SCROLL BUTTON */
-
-#scrollTopBtn{
-  position:fixed;
-  left:25px;
-  bottom:25px;
-  width:55px;
-  height:55px;
-  border:none;
-  border-radius:50%;
-  background:linear-gradient(45deg,var(--rose),var(--pink));
-  color:white;
-  font-size:1.3rem;
-  cursor:pointer;
-  display:none;
-  box-shadow:0 10px 20px rgba(0,0,0,0.15);
-}
-
-/* FOOTER */
-
-.site-footer{
-  margin-top:80px;
-  background:linear-gradient(45deg,var(--rose),var(--pink));
-  color:white;
-  text-align:center;
-  padding:40px 20px;
-  border-top-left-radius:40px;
-  border-top-right-radius:40px;
-}
-
-.site-footer a{
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* ANIMATION */
-
-.fade-in{
-  animation:fadeUp 1.3s ease;
-}
-
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-  .menu{
-    display:none;
-  }
-
-  .hamburger{
-    display:block;
-  }
-
-  .hero-content h1{
-    font-size:3rem;
-  }
-
-  .section{
-    padding:35px 20px;
-  }
-
-  .section-title{
-    font-size:2.2rem;
-  }
-
-}
-
-@media(max-width:600px){
-
-  .hero-content h1{
-    font-size:2.3rem;
-  }
-
-  .hero-content p{
-    font-size:1rem;
-  }
-
-  .fashion-quote{
-    font-size:1.4rem;
-  }
-
-  .parallax-section h2{
-    font-size:2rem;
-  }
-
-}
-
-</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-
-<!-- NAVBAR -->
-
-<nav class="navbar">
-
-<div class="logo">
-<a href="home.html">
-<img src="image/logo.jpg" alt="Fahima Logo">
-<span>Fahima Akter</span>
-</a>
+ <!-- 🌸 Blob Background -->
+<div class="blob-wrapper">
+  <svg class="blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#fff0f5" d="M49.4,-54.7C64.9,-43.7,77.4,-28.4,78.7,-12.2C80.1,4,70.3,21.1,58.3,35.5C46.3,49.8,32.2,61.5,15.6,66.7C-1,71.9,-20.1,70.6,-36.3,62.2C-52.5,53.8,-65.7,38.3,-70.1,21C-74.5,3.6,-70,-15.5,-60.2,-30.6C-50.5,-45.6,-35.5,-56.7,-19.1,-64.1C-2.8,-71.6,14.1,-75.6,30.4,-70.4C46.7,-65.2,62.5,-50.6,49.4,-54.7Z" transform="translate(100 100)" />
+  </svg>
 </div>
 
-<div class="hamburger" onclick="toggleSidebar()">
-☰
+<div id="scroll-bar"></div>
+  <div class="main">
+    <div class="navbar">
+      <!-- ✅ Logo Image + Text -->
+      <div class="logo">
+        <a href="home.html">
+          <img src="image/logo.jpg" alt="Fahima Logo">
+          <span>Fahima Akter</span>
+        </a>
+      </div>
+<!-- ☰ Hamburger Icon -->
+<div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+<!-- Sidebar Menu -->
+<div id="sidebar" class="sidebar">
+  <a href="home.html">Home</a>
+  <a href="about.html">About Me</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
 </div>
 
-<div class="sidebar" id="sidebar">
-<a href="home.html">Home</a>
-<a href="about.html">About Me</a>
-<a href="blog.html">Blog</a>
-<a href="contact.html">Contact</a>
+      <!-- ✅ Menu -->
+      <div class="menu">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<!-- ✅ Fashion Design Student Quote -->
+<div class="fashion-quote">
+  <p>"Fashion is the art of self-expression — I don't just design clothes, I design dreams. — <strong>Fahima Akter</strong>"</p>
 </div>
 
-<div class="menu">
-<ul>
-<li><a href="home.html">Home</a></li>
-<li><a href="about.html">About Me</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
 
-</nav>
-
-<!-- HERO -->
-
-<section class="hero">
-<div class="hero-content">
-<h1>Elegance in Every Thread</h1>
-<p>Fashion Designer • Creative Artist • Dream Creator</p>
-<a href="illustrations.html" class="hero-btn">Explore My Work</a>
-</div>
+<!-- ✅ Welcome Section -->
+ <section class="typewriter-section">
+  <h2>👗 <span id="typewriter"></span></h2>
 </section>
 
-<!-- QUOTE -->
-
-<div class="fashion-quote fade-in">
-<p>
-"Fashion is the art of self-expression — I don't just design clothes, I design dreams."
-</p>
+<div class="welcome-section fade-in">
+  <h1>Welcome to My Creative World</h1>
+  <p>I'm <strong>Fahima Akter</strong>, a passionate fashion design student. Explore my journey through fabric, color, texture, and imagination. Let my designs tell the story.</p>
 </div>
-
-<!-- TYPEWRITER -->
-
-<section class="typewriter-section fade-in">
-<h2>👗 <span id="typewriter"></span></h2>
+<section class="skills-section fade-in">
+  <h2>My Skills</h2>
+  <ul class="skills-list">
+    <li>Fashion Illustration</li>
+    <li>Embroidery & Hand Stitch</li>
+    <li>Adobe Illustrator</li>
+    <li>Draping & Pattern Making</li>
+    <li>Digital Moodboard</li>
+  </ul>
 </section>
-
-<!-- WELCOME -->
-
-<section class="section welcome-section fade-in">
-<h2 class="section-title">Welcome to My Creative World</h2>
-
-<p>
-I'm <strong>Fahima Akter</strong>, a passionate fashion design student. Explore my journey through fabric, texture, embroidery, draping, and imagination. Every design tells a story of creativity and elegance.
-</p>
+<section class="parallax-section">
+  <h2>Inspired by Fabric</h2>
+  <p>The soul of design lies in the threads that hold it together.</p>
 </section>
+<!-- SVG Divider -->
+<div class="divider">
+  <svg viewBox="0 0 1440 320">
+    <path fill="#fff0f5" d="M0,192L1440,96L1440,320L0,320Z"></path>
+  </svg>
+</div>
 
-<!-- SKILLS -->
+  <!-- ✅ Work Section -->
+<section class="work-section">
+  <h2 class="work-title">Here is My Work</h2>
+  <div class="work-buttons">
+    <a href="illustrations.html" class="work-btn"><i class="fas fa-paint-brush"></i> Illustrations Gallery</a>
 
-<section class="section fade-in">
-<h2 class="section-title">My Skills</h2>
+    <a href="moodboards.html" class="work-btn"><i class="fas fa-paint-brush"></i>Mood Boards Gallery</a>
+    <a href="handstitch.html" class="work-btn"><i class="fas fa-paint-brush"></i>Handstitch Gallery</a>
+    <a href="ribbon.html" class="work-btn"><i class="fas fa-paint-brush"></i>Ribbon Work</a>
+    <a href="zardesi.html" class="work-btn"><i class="fas fa-paint-brush"></i>Zardesi Work</a>
+    <a href="dyeing.html" class="work-btn"><i class="fas fa-paint-brush"></i>Dyeing Work</a>
+    <a href="painting.html" class="work-btn"><i class="fas fa-paint-brush"></i>Painting</a>
+    <a href="draping.html" class="work-btn"><i class="fas fa-paint-brush"></i>Miniature Draping Gallery</a>
+    <a href="digital-illustrations.html" class="work-btn"><i class="fas fa-paint-brush"></i>Digital Illustrations Gallery</a>
+    <a href="elements.html" class="work-btn"><i class="fas fa-paint-brush"></i>Elements of Design</a>
+    <a href="digital-moodboard.html" class="work-btn"><i class="fas fa-paint-brush"></i>Digital Moodboard</a>
+    <a href="exclusive-dress.html" class="work-btn"><i class="fas fa-paint-brush"></i>My Exclusive Dress Design</a>
+  </div>
+  <section class="testimonial-section fade-in">
+  <h2>What Others Say</h2>
+  <blockquote>
+    “Fahima's creativity is inspiring! Her work is full of life and detail.” — <strong>Mr Riham, co worker</strong>
+  </blockquote>
+  <blockquote>"Fahima’s attention to detail is inspiring!" – Ms. Umme Kulsum Akter,  co worker</blockquote><br>
+<!-- 🌟 DTG Fashion Show Highlights -->
+<section class="fashion-show-section fade-in">
 
-<ul class="skills-list">
-<li>Fashion Illustration</li>
-<li>Embroidery & Hand Stitch</li>
-<li>Adobe Illustrator</li>
-<li>Draping & Pattern Making</li>
-<li>Digital Moodboard</li>
-</ul>
+<h2>🌟 DTG Fashion Show Highlights</h2>
+   <p>
+    I had the honor of representing <strong>Sonargaon University</strong> in the prestigious 
+    <strong>DTG Fashion Show</strong>. As both the <strong>designer</strong> and <strong>model</strong>, 
+    I showcased my original dress design and proudly walked the ramp. This unforgettable experience reflects 
+    my passion, creativity, and dedication to fashion.
+  </p>
+  <div class="slideshow-container">
+    <div class="slide fade"><img src="show/show (1).jpeg" alt="DTG Fashion Show 1"></div>
+    <div class="slide fade"><img src="show/show (2).jpeg" alt="DTG Fashion Show 2"></div>
+    <div class="slide fade"><img src="show/show (3).jpeg" alt="DTG Fashion Show 3"></div>
+    <div class="slide fade"><img src="show/show (4).jpeg" alt="DTG Fashion Show 4"></div>
+    <div class="slide fade"><img src="show/show (5).jpeg" alt ="DTG Fashion Show 5"></div>
+    <div class="slide fade"><img src="show/show (6).jpeg" alt="DTG Fashion Show 6"></div>
+    <div class="slide fade"><img src="show/show (7).jpeg" alt="DTG Fashion Show 7"></div>
+    <div class="slide fade"><img src="show/show (8).jpeg" alt="DTG Fashion Show 8"></div>
+    <div class="slide fade"><img src="show/show (9).jpeg" alt="DTG Fashion Show 9"></div>
+
+    <!-- Arrows -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+    <span class="dot" onclick="currentSlide(8)"></span>
+    <span class="dot" onclick="currentSlide(9)"></span>
+  </div>
 </section>
-
-<!-- PARALLAX -->
-
-<section class="parallax-section fade-in">
-<h2>Inspired by Fabric</h2>
-<p>The soul of design lies in the threads that hold it together.</p>
 </section>
-
-<!-- WORK -->
-
-<section class="section fade-in">
-<h2 class="section-title">My Creative Works</h2>
-
-<div class="work-buttons">
-
-<a href="illustrations.html" class="work-btn"><i class="fas fa-paint-brush"></i>Illustrations Gallery</a>
-
-<a href="moodboards.html" class="work-btn"><i class="fas fa-image"></i>Mood Boards Gallery</a>
-
-<a href="handstitch.html" class="work-btn"><i class="fas fa-scissors"></i>Hand Stitch Gallery</a>
-
-<a href="ribbon.html" class="work-btn"><i class="fas fa-ribbon"></i>Ribbon Work</a>
-
-<a href="zardesi.html" class="work-btn"><i class="fas fa-star"></i>Zardesi Work</a>
-
-<a href="dyeing.html" class="work-btn"><i class="fas fa-fill-drip"></i>Dyeing Work</a>
-
-<a href="painting.html" class="work-btn"><i class="fas fa-palette"></i>Painting</a>
-
-<a href="draping.html" class="work-btn"><i class="fas fa-shirt"></i>Miniature Draping</a>
-
-<a href="digital-illustrations.html" class="work-btn"><i class="fas fa-laptop"></i>Digital Illustrations</a>
-
-<a href="elements.html" class="work-btn"><i class="fas fa-shapes"></i>Elements of Design</a>
-
-<a href="digital-moodboard.html" class="work-btn"><i class="fas fa-desktop"></i>Digital Moodboard</a>
-
-<a href="exclusive-dress.html" class="work-btn"><i class="fas fa-crown"></i>Exclusive Dress Design</a>
-
+<div class="cta-section fade-in">
+  <h2>Like My Work?</h2>
+  <p>Feel free to <a href="contact.html">reach out</a> or follow me on <a href="https://www.facebook.com/fahima.akter.825253" target="_blank">Facebook</a>.</p>
 </div>
-</section>
-
-<!-- TESTIMONIAL -->
-
-<section class="section testimonial-section fade-in">
-<h2 class="section-title">What Others Say</h2>
-
-<blockquote>
-“Fahima's creativity is inspiring! Her work is full of life and detail.” — <strong>Mr Riham</strong>
-</blockquote>
-
-<blockquote>
-“Fahima’s attention to detail is inspiring!” — <strong>Ms. Umme Kulsum Akter</strong>
-</blockquote>
-
-</section>
-
-<!-- FASHION SHOW -->
-
-<section class="section fade-in">
-<h2 class="section-title">🌟 DTG Fashion Show Highlights</h2>
-
-<p style="text-align:center; line-height:1.9; max-width:900px; margin:auto;">
-I had the honor of representing <strong>Sonargaon University</strong> in the prestigious DTG Fashion Show. As both the designer and model, I showcased my original dress design and proudly walked the ramp.
-</p>
-
-<div class="slideshow-container">
-
-<div class="slide fade">
-<img src="show/show (1).jpeg" alt="Fashion Show 1">
-</div>
-
-<div class="slide fade">
-<img src="show/show (2).jpeg" alt="Fashion Show 2">
-</div>
-
-<div class="slide fade">
-<img src="show/show (3).jpeg" alt="Fashion Show 3">
-</div>
-
-<div class="slide fade">
-<img src="show/show (4).jpeg" alt="Fashion Show 4">
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
-
-</div>
-
-<div class="dots">
-<span class="dot" onclick="currentSlide(1)"></span>
-<span class="dot" onclick="currentSlide(2)"></span>
-<span class="dot" onclick="currentSlide(3)"></span>
-<span class="dot" onclick="currentSlide(4)"></span>
-</div>
-
-</section>
-
-<!-- CTA -->
-
-<section class="section cta-section fade-in">
-<h2 class="section-title">Like My Work?</h2>
-<p>
-Feel free to <a href="contact.html">reach out</a> or follow me on social media.
-</p>
-</section>
-
-<!-- SOCIAL -->
-
-<div class="social-icons">
-<a href="https://facebook.com/fahima.akter.825253" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a href="https://instagram.com/___fahima________" target="_blank"><i class="fab fa-instagram"></i></a>
-</div>
-
-<!-- TOP BUTTON -->
-
-<button onclick="scrollToTop()" id="scrollTopBtn">↑</button>
-
-<!-- FOOTER -->
-
-<footer class="site-footer">
-<p>© 2026 Fahima Akter — All rights reserved.</p>
-<p>Designed with ❤ by Riham</p>
-</footer>
 
 <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
+  }
 
-function toggleSidebar(){
-  document.getElementById('sidebar').classList.toggle('active');
-}
-
-window.addEventListener('click',function(e){
-
-const sidebar=document.getElementById('sidebar');
-const hamburger=document.querySelector('.hamburger');
-
-if(!sidebar.contains(e.target) && !hamburger.contains(e.target)){
-  sidebar.classList.remove('active');
-}
-
-});
-
-// TYPEWRITER
-
-const messages=[
-  'Welcome to Fahima Akter’s Creative World',
-  'Fashion is Art, and You are the Canvas',
-  'Explore Illustrations, Draping & More'
+  // Optional: Close sidebar when clicking outside
+  window.addEventListener("click", function (e) {
+    const sidebar = document.getElementById("sidebar");
+    const hamburger = document.querySelector(".hamburger");
+    if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+      sidebar.classList.remove("active");
+    }
+  });
+</script>
+<script>
+const messages = [
+  "Welcome to Fahima Akter’s Creative World",
+  "Fashion is Art, and You are the Canvas",
+  "Explore Illustrations, Draping, Stitch Work & More"
 ];
 
-let messageIndex=0;
-let charIndex=0;
-const speed=100;
-const element=document.getElementById('typewriter');
+let messageIndex = 0;
+let charIndex = 0;
+const speed = 100; // typing speed
+const element = document.getElementById("typewriter");
 
-function typeEffect(){
-
-if(charIndex < messages[messageIndex].length){
-
-  element.textContent += messages[messageIndex].charAt(charIndex);
-  charIndex++;
-  setTimeout(typeEffect,speed);
-
-}
-else{
-  setTimeout(eraseEffect,2000);
-}
-
-}
-
-function eraseEffect(){
-
-if(charIndex > 0){
-
-  element.textContent = messages[messageIndex].substring(0,charIndex-1);
-  charIndex--;
-  setTimeout(eraseEffect,speed/2);
-
-}
-else{
-
-  messageIndex=(messageIndex+1)%messages.length;
-  setTimeout(typeEffect,500);
-
-}
-
-}
-
-document.addEventListener('DOMContentLoaded',typeEffect);
-
-// SCROLL BUTTON
-
-const scrollBtn=document.getElementById('scrollTopBtn');
-
-window.onscroll=function(){
-
-  if(window.scrollY > 300){
-    scrollBtn.style.display='block';
+function typeEffect() {
+  if (charIndex < messages[messageIndex].length) {
+    element.textContent += messages[messageIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeEffect, speed);
+  } else {
+    setTimeout(eraseEffect, 2000);
   }
-  else{
-    scrollBtn.style.display='none';
-  }
-
-};
-
-function scrollToTop(){
-
-window.scrollTo({
-  top:0,
-  behavior:'smooth'
-});
-
 }
 
-// SLIDESHOW
+function eraseEffect() {
+  if (charIndex > 0) {
+    element.textContent = messages[messageIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseEffect, speed / 2);
+  } else {
+    messageIndex = (messageIndex + 1) % messages.length;
+    setTimeout(typeEffect, 500);
+  }
+}
 
-let slideIndex=1;
+document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+
+<!-- Floating Social Icons -->
+<div class="social-icons">
+  <a href="https://facebook.com/fahima.akter.825253" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://instagram.com/___fahima________" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+
+
+<button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">↑</button>
+<script>
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  window.onscroll = function () {
+    scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  };
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+<script>
+let slideIndex = 1;
 showSlides(slideIndex);
 
-function plusSlides(n){
+// Next/previous controls
+function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-function currentSlide(n){
-  showSlides(slideIndex=n);
+// Dot controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
-function showSlides(n){
-
-let slides=document.getElementsByClassName('slide');
-let dots=document.getElementsByClassName('dot');
-
-if(n > slides.length){slideIndex=1}
-if(n < 1){slideIndex=slides.length}
-
-for(let i=0;i<slides.length;i++){
-  slides[i].style.display='none';
+function showSlides(n) {
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].classList.add("active");
 }
 
-for(let i=0;i<dots.length;i++){
-  dots[i].classList.remove('active');
-}
-
-slides[slideIndex-1].style.display='block';
-dots[slideIndex-1].classList.add('active');
-
-}
-
-setInterval(()=>{
-  plusSlides(1);
-},5000);
-
+// Optional: Auto-slide
+setInterval(() => { plusSlides(1); }, 5000); // every 5 seconds
 </script>
-
+  <?php
+echo"made by Riham";
+?>
 </body>
+<!-- ✅ Footer -->
+<footer class="site-footer">
+  <p>© 2026 Fahima Akter — All rights reserved.</p>
+  <p>Follow me on <a href="https://www.facebook.com/fahima.akter.825253" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+</footer>
+
 </html>
+
+
+
+
